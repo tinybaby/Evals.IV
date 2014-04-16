@@ -181,6 +181,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
     <Compile Include="Areas\Administration\Controllers\UserManagerController.cs" />
+    <Compile Include="Areas\Administration\Controllers\VideoController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -423,6 +424,7 @@
     <Content Include="Assets\bootstrap\js\user_profile.html" />
     <Content Include="Assets\css\login.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\video.css" />
     <Content Include="Assets\icons\flags\flags%402x.png" />
     <Content Include="Assets\icons\flags\flags.css" />
     <Content Include="Assets\icons\flags\flags.png" />
@@ -499,8 +501,10 @@
     <Content Include="Assets\img\gallery\Image019_tn.jpg" />
     <Content Include="Assets\img\gallery\Image020.jpg" />
     <Content Include="Assets\img\gallery\Image020_tn.jpg" />
+    <Content Include="Assets\img\in_bg.png" />
     <Content Include="Assets\img\logo.png" />
     <Content Include="Assets\img\multiselect_switch.png" />
+    <Content Include="Assets\img\spr_ico.png" />
     <Content Include="Assets\img\switch_handle.png" />
     <Content Include="Assets\js\apps\tisa_calendar.js" />
     <Content Include="Assets\js\apps\tisa_charts.js" />
@@ -661,6 +665,7 @@
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.eot-" />
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Areas\Administration\Views\Video\Index.cshtml" />
     <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.eot-" />
     <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -693,6 +698,7 @@
     <Content Include="Scripts\template.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="UploadAssets\Avatar\dragon.jpg" />
+    <Content Include="UploadAssets\Move\_.jpg" />
     <Content Include="Views\Template\alerts_buttons.html" />
     <Content Include="Views\Template\assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="Views\Template\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />

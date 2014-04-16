@@ -37,7 +37,8 @@ namespace Evals.IV.Store
                 "~/Assets/icons/ionicons/css/ionicons.min.css",
                 "~/Assets/css/style.css",
                 "~/Assets/lib/novus-nvd3/nv.d3.min.css",
-                "~/Assets/lib/owl-carousel/owl.carousel.css"
+                "~/Assets/lib/owl-carousel/owl.carousel.css",
+                "~/Assets/css/video.css"
                 ));
             bundles.Add(new ScriptBundle("~/Assets/moment").Include("~/assets/lib/moment-js/moment.min.js"));
 

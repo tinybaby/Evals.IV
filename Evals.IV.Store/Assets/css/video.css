@@ -1,0 +1,592 @@
+﻿.view_header .userinfob .u_name .u_shebei, .view_header .u_nHover a i, .yb_bf .yb_bfbtn .bf_iconb .t, .yb_bf .yb_bfbtn .bf_iconb .b, .yb_bf .yb_bfbtn .bf_icon, .yb_bf .m_pad, .yb_bf .m_light, .yb_bf .me .on .m_light, .yb_bf .me .on .m_pad, .driver_ico, .acc_link li a .mail, .acc_link li a .imail, .acc_link li a .t, .acc_link li a .b, .wp_Cdelate .t, .wp_Cdelate .b, .yb_vedio .yb_like a.yb_ldel .t, .yb_vedio .yb_like a.yb_ldel .b, .dth_boxa .v_bt, .yb_main_list .yb_like a.yb_ldel .t, .yb_main_list .yb_like a.yb_ldel .b, .acc_link li .arr_bottom, .acc_link li .arr_bottoma, .yb_bf .yb_bfbtn .bf_iconb .t, .yb_bf .yb_bfbtn .bf_iconb .b, .yb_btlist .yb_listb .yb_friends li .yb_fuser a.yb_addList, .yb_friends li .yb_fuser a.yb_addList, .yb_vedio .p_text i, .introa .vedio_icon, .yb_vedio .v_bt, .yb_vedio .vedio_yj, .yb_vedio .vedio_yjOn, .yb_vedio .yb_like a, .yb_vedio .yb_like a.yb_loveOn, .mid_hd_myfriend i, .dth_boxa .vedio_icon, .yb_main_list .yb_like a, .yb_main_list .yb_like a.yb_loveOn, .acc_link li .mail_grey .mail i, .acc_link li .mail_grey:hover .mail i, .acc_link li .mail_grey span, .acc_link li :hover.mail_grey span, .m_hd_del .wp_Cdelate .t, .m_hd_del .wp_Cdelate .b, .yb_main_list .yb_like a.yb_ldown .t, .yb_main_list .yb_like span, .yb_main_list .yb_like a.yb_ldown .b, .dth_boxb .dp_love {
+    background: url(../img/spr_ico.png?v=104.01) no-repeat;
+}
+/*yb_vedio*/
+.yb_vedio {
+}
+
+.yb_vedio {
+    color: #000;
+    padding: 15px 0 0px 0px;
+    z-index: 100;
+}
+
+    .yb_vedio li {
+        position: relative;
+        float: left;
+        height: 203px;
+        width: 140px;
+       
+        background: #FCFCFC;
+        zoom: 1;
+        font: 12px/18px Helvetica,\5b8b\4f53;
+    }
+
+    .yb_vedio li {
+        margin: 0 39px 20px 0;
+    }
+
+.yb_listBoxa .yb_vedio li {
+    margin-right: 57px;
+}
+
+.yb_vedio_brose li {
+    margin: 0 26px 20px 0;
+}
+
+.yb_listBoxa .yb_vedio_brose li {
+    margin-right: 38px;
+}
+
+.yb_vedio li .ybimg_shadow {
+    display: block;
+    width: 140px;
+    height: 6px;
+    position: absolute;
+    top: 185px;
+    left: 5px;
+}
+
+
+.yb_1366 .yb_vedio li {
+    margin-right: 33px;
+}
+
+.yb_1366 .yb_listBoxa .yb_vedio li {
+    margin-right: 48px;
+}
+
+.yb_1366 .yb_vedio_brose li {
+    margin-right: 54px;
+}
+
+.yb_1366 .yb_listBoxa .yb_vedio_brose li {
+    margin-right: 25px;
+}
+
+.yb_1280 .yb_vedio li {
+    margin-right: 19px;
+}
+
+.yb_1280 .yb_listBoxa .yb_vedio li {
+    margin-right: 28px;
+}
+
+.yb_1280 .yb_vedio_brose li {
+    margin-right: 32px;
+}
+
+.yb_1280 .yb_listBoxa .yb_vedio_brose li {
+    margin-right: 53px;
+}
+
+.yb_listBox .yb_vedio_brose li .inner {
+    padding: 5px;
+    position: absolute;
+     border: 2px solid #E5E3E3;
+}
+
+    .yb_listBox .yb_vedio_brose li .inner:hover {
+        border: 2px solid #5673B6;
+        background: #FEFEFE;
+        zoom: 1;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.3),1px 1px 0 #fff inset;
+        z-index:1000;
+    }
+
+.yb_listBox .yb_vedio_brose li, .yb_listBox .yb_vedio_brose li .inner {
+    width: 150px;
+    height: 190px;
+}
+
+    .yb_listBox .yb_vedio_brose li:hover .inner {
+        height: 221px;
+    }
+
+    .yb_listBox .yb_vedio_brose li a.vedio_link {
+        display: inline-block;
+        width: 136px;
+        height: 120px;
+        text-align: center;
+    }
+
+        .yb_listBox .yb_vedio_brose li a.vedio_link img {
+            width: auto;
+            height: 120px;
+        }
+
+        .yb_listBox .yb_vedio_brose li a.vedio_link .vedio_innnerbox {
+            width: 400px;
+        }
+
+    .yb_listBox .yb_vedio_brose li .ybimg_shadow {
+        top: 125px;
+        width: 150px;
+    }
+
+.yb_listBox .yb_vedio_brose .vinput_box {
+    width: 150px;
+}
+
+.yb_listBox .yb_vedio_brose .vedio_input {
+    width: 148px;
+}
+
+
+.yb_listBox .yb_vedio_brose li .v_bt {
+    top: 105px;
+    _top: 106px;
+}
+
+.yb_listBox .yb_vedio_brose li .introa {
+    top: 95px;
+    width: 150px;
+}
+
+.yb_listBox .yb_vedio_brose li .intro {
+    width: 150px;
+    height: 120px;
+}
+
+.yb_listBox .yb_vedio_brose li .p_text {
+    top: 45px;
+    width: 150px;
+}
+
+.yb_listBox .yb_vedio_brose li .info_texta {
+    top: 95px;
+    width: 136px;
+}
+
+.yb_listBox .yb_vedio_brose li .yb_like {
+    left: 5px;
+    top: 177px;
+    width: 135px;
+}
+
+.yb_listBox .yb_vedio_brose li .info_erro {
+    top: 152px;
+    width: 150px;
+}
+
+.yb_listBox .yb_vedio_brose li .introa .vedio_icon {
+    margin-top: -54px;
+}
+
+.yb_listBox .yb_friends li {
+    height: 205px;
+}
+
+    .yb_listBox .yb_friends li .yb_fuser {
+        top: 178px;
+        width: 150px;
+    }
+
+.yb_listb .yb_friends li {
+    height: 300px;
+}
+
+    .yb_listb .yb_friends li .yb_fuser {
+        top: 275px;
+    }
+
+.yb_vedio li a.vedio_link {
+    position: relative;
+    display: block;
+    width: 140px;
+    height: 180px;
+    overflow: hidden;
+}
+
+.yb_vedio li .vedio_link:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.yb_vedio li a.vedio_link img {
+    vertical-align: middle;
+    width: 140px;
+    height: 180px;
+    margin: 0;
+}
+
+.yb_vedio li:hover {
+}
+
+.yb_vedio li.v_cur {
+    border: 2px solid #526DC1;
+    background: #fff;
+    zoom: 1;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3),1px 1px 0 #fff inset;
+}
+
+.yb_vedio li a.vedio_cc, .yb_listBox .yb_vedio_brose li a.vedio_cc {
+    background: none;
+}
+
+
+.yb_btlist .yb_vedio li {
+    height: 230px;
+}
+
+.yb_btlist .yb_vedio_brose li {
+    width: 150px;
+    height: 168px;
+}
+
+.yb_btlist .yb_listb .yb_friends li {
+    height: 258px;
+}
+
+.yb_btlist .yb_listb .yb_vedio_brose li {
+    height: 174px;
+}
+
+.yb_btlist .yb_listb .yb_friends li .yb_fuser {
+    top: 235px;
+    width: 140px;
+}
+
+.yb_btlist .yb_listBox .yb_vedio_brose li .yb_fuser {
+    top: 178px;
+    width: 150px;
+}
+
+.yb_btlist .yb_listb .yb_friends li .yb_fuser a.yb_addList, .yb_friends li .yb_fuser a.yb_addList {
+    float: right;
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 2px 3px 0 0px;
+    overflow: hidden;
+    background-position: 6px -247px;
+}
+
+    .yb_btlist .yb_listb .yb_friends li .yb_fuser a.yb_addList:hover, .yb_friends li .yb_fuser a.yb_addList:hover {
+        background-position: 6px -228px;
+    }
+
+
+.yb_vedio li .info_text, .yb_vedio li .info_texcenter {
+    display: block;
+    padding: 8px 0 0;
+    margin-bottom: 9px;
+    width: 140px;
+    height: 42px;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 18px;
+    cursor: hand;
+    cursor: default;
+}
+
+.yb_vedio li .info_text {
+    text-align: left;
+}
+
+.yb_vedio li .info_texcenter {
+    text-align: center;
+}
+
+    .yb_vedio li .info_text:hover, .yb_vedio li .info_texcenter:hover {
+        text-decoration: none;
+        color: #000000;
+    }
+
+
+.yb_vedio li .info_text input {
+    position: relative;
+    top: 2px;
+}
+
+.yb_vedio li .info_texta {
+    position: absolute;
+    top: 155px;
+    width: 130px;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+}
+
+    .yb_vedio li .info_texta a {
+        display: inline-block;
+        width: 100%;
+        z-index: 100;
+    }
+
+        .yb_vedio li .info_texta a:hover {
+            text-decoration: none;
+        }
+
+    .yb_vedio li .info_texta i {
+        color: #fff;
+        cursor: pointer;
+    }
+
+.yb_vedio li .info_erro {
+    position: absolute;
+    top: 213px;
+    width: 140px;
+    height: 26px;
+    overflow: hidden;
+    text-align: center;
+    cursor: default;
+    line-height: 20px;
+    background: #fff;
+}
+
+
+
+.yb_vedio li .info_texta i.left {
+    float: left;
+}
+
+.yb_vedio li .info_texta i.right, .yb_vedio li .info_input {
+    float: right;
+}
+
+.yb_vedio li a.v_nHand, .yb_vedio li .v_nHand {
+    cursor: default;
+}
+
+.yb_vedio li .info_input {
+    position: relative;
+    margin: 5px 0 0;
+    *top: -3px;
+    padding: 0;
+}
+
+
+.vedio_scollBox {
+    position: absolute;
+    top: 45px;
+    right: 8px;
+    width: 12px;
+    height: 455px;
+}
+
+.vedio_scoller {
+    position: relative;
+    display: block;
+    width: 12px;
+    height: 99px;
+}
+
+.vedio_cite {
+    position: absolute;
+    top: 0;
+    height: 39px;
+    width: 100%;
+    text-align: center;
+    line-height: 39px;
+    border-top: 1px solid #FFE768;
+    background: #FFF4B9;
+    color: #C5AD2E;
+    z-index: 200;
+}
+
+.list_cite {
+    top: 48px;
+}
+
+.vedio_cite p {
+    line-height: 39px;
+    text-align: center;
+}
+
+    .vedio_cite p .v_colorg {
+        color: #C5AD2E;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+        .vedio_cite p .v_colorg:hover {
+            text-decoration: none;
+            color: #C5AD2E;
+        }
+
+.yb_vedio .intro, .yb_vedio .introa {
+    position: absolute;
+    margin: 0;
+    height: 30px;
+    top: 5px;
+    left: 5px;
+    width: 140px;
+}
+
+.yb_vedio .intro {
+    height: 180px;
+}
+
+.yb_vedio .introa {
+    top: 155px;
+}
+
+.yb_vedio .p_text {
+    position: absolute;
+    top: 80px;
+    width: 140px;
+    text-align: center;
+    color: #F9F9F9;
+    height: 26px;
+    font: 12px/26px Helvetica,\5FAE\8F6F\96C5\9ED1;
+}
+
+    .yb_vedio .p_text i {
+        position: relative;
+        *top: 0px;
+        _top: 5px;
+        display: inline-block;
+        width: 19px;
+        height: 16px;
+        padding-right: 0;
+        cursor: default;
+        overflow: hidden;
+        vertical-align: middle;
+        background-position: 0 -9999em;
+    }
+
+        .yb_vedio .p_text i.v_wrong {
+            background-position: -38px -211px;
+        }
+
+        .yb_vedio .p_text i.v_sucess {
+            background-position: -19px -194px;
+        }
+
+        .yb_vedio .p_text i.v_now {
+            background-position: -19px -211px;
+        }
+
+        .yb_vedio .p_text i.v_waiting {
+            background-position: -38px -194px;
+        }
+
+        .yb_vedio .p_text i.v_down {
+            background-position: 0 -93px;
+        }
+
+    .yb_vedio .p_text span {
+        position: relative;
+        *top: -1px;
+        _top: 5px;
+    }
+
+.introa .vedio_icon {
+    background-position: -80px -216px;
+    ;
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -22px;
+    margin-top: -88px;
+}
+
+.yb_vedio .v_bt {
+    position: absolute;
+    top: 165px;
+    right: 5px;
+    _top: 166px;
+    _right: 4px;
+    width: 40px;
+    height: 20px;
+    background-position: -81px -87px;
+}
+
+.yb_vedio .vedio_yj, .yb_vedio .vedio_yjOn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 26px;
+    height: 16px;
+    cursor: default;
+    z-index: 70;
+}
+
+.yb_vedio .vedio_yj {
+    background-position: -87px -116px;
+}
+
+.yb_vedio .vedio_yjOn {
+    background-position: -87px -133px;
+}
+
+
+.yb_vedio .vinput_box {
+    position: relative;
+    padding: 9px 0 18px;
+    *padding-top: 3px;
+    height: 26px;
+    width: 140px;
+    cursor: default;
+}
+
+.yb_vedio .vedio_input {
+    *position: absolute;
+    *top: 8px;
+    *left: 0px;
+    overflow: hidden;
+    height: 24px;
+    width: 138px;
+    line-height: 24px;
+    text-indent: 5px;
+    font-size: 12px;
+    color: #background:#fff;
+    border: 1px solid #CDD3E0;
+    font-size: 12px;
+    -moz-box-shadow: 3px 3px 5px #F3F2F2 inset;
+    -webkit-box-shadow: 3px 3px 5px #F3F2F2 inset;
+    box-shadow: 3px 3px 5px #F3F2F2 inset;
+}
+
+
+.yb_vedio .yb_like {
+    position: absolute;
+    top: 238px;
+    left: 4px;
+    width: 140px;
+    padding-top: 12px;
+    border-top: 1px solid #E4E4E4;
+    cursor: default;
+    z-index: 60;
+    display: none;
+}
+
+    .yb_vedio .yb_like a {
+        float: left;
+        position: relative;
+        display: block;
+        width: 24px;
+        height: 24px;
+        margin: 0 3px 2px 0px;
+        overflow: hidden;
+        background-position: -9999em;
+    }
+
+
+
+    .yb_vedio .yb_like .side_icon {
+        font-size: 18px;
+        margin-right: 4px;
+        vertical-align: -3px;
+        min-width: 22px;
+        text-align: center;
+        color: #999;
+    }
+
+        .yb_vedio .yb_like .side_icon:hover {
+            color: #0b45f7;
+        }
+
+.yb_vedio li:hover .yb_like {
+    display: block;
+}
+.yb_vedio li .info_texta {
+    background: url(../img/in_bg.png) no-repeat;
+}
