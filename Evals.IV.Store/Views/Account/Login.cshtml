@@ -1,0 +1,61 @@
+﻿@model Evals.IV.Infrastructure.Identity.Customer
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+    <!-- bootstrap framework -->
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- google webfonts -->
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400&amp;subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+
+    <link href="/assets/css/login.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="login_container">
+        @using (Html.BeginForm())
+        {
+            <h1 class="login_heading">管理员登陆 </h1>
+            <div class="form-group">
+                <label for="login_username">用户名</label>
+                <input type="text" class="form-control" value="" id="login_username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="login_password">密码</label>
+                <input type="password" class="form-control" value="" id="login_password" name="passwordhash">
+                <span class="help-block"><a href="#">Forgot password?</a></span>
+            </div>
+            <div class="submit_section">
+                <button class="btn btn-lg btn-success btn-block" type="submit">登陆</button>
+            </div>
+        }
+
+    </div>
+
+    <div class="modal fade" id="terms_modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Terms & Conditions</h4>
+                </div>
+                <div class="modal-body">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eaque tempora! Porro cumque labore voluptate dolore alias libero commodi deserunt unde aspernatur dignissimos quaerat similique maiores quasi eos optio quidem.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus eaque tempora! Porro cumque labore voluptate dolore alias libero commodi deserunt unde aspernatur dignissimos quaerat similique maiores quasi eos optio quidem.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

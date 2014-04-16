@@ -1,0 +1,1302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CA1FD96A-9E3C-4BDB-838E-7E35F6453D35}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Evals.IV.Store</RootNamespace>
+    <AssemblyName>Evals.IV.Store</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.1\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Administration\Controllers\UserManagerController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\bootstrap\js\%29[this.options.html-.htm" />
+    <Content Include="Assets\bootstrap\js\alerts_buttons.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\alerts_buttons.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\blank.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\calendar.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\charts.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\chat.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\dashboard.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\easy_tree.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\ecommerce_products_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\ecommerce_product_edit.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\ecommerce_sales_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\editable_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\error_404.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\form_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\form_extended_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\form_validation.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\form_wizard.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\form_wysiwg.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\gallery.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\grid.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\icons.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\image_zoom.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\invoice.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\login_page.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\mail_compose.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\mail_inbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\mail_outbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\mail_spam.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\modals_lightbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\multiupload.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\newsletter_campaigns.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\newsletter_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\newsletter_templates.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\notifications.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\sidebar_accordion.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tables_datatables.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tables_regular.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tabs_accordions.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tasks_label.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tasks_starred.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tasks_summary.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tasks_today.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\tooltips_popovers.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\typography.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\user_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\bootstrap\js\user_profile.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\alerts_buttons.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\blank.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\calendar.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\charts.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\chat.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\dashboard.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\easy_tree.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\ecommerce_products_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\ecommerce_product_edit.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\ecommerce_sales_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\editable_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\error_404.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\form_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\form_extended_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\form_validation.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\form_wizard.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\form_wysiwg.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\gallery.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\grid.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\icons.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\image_zoom.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\invoice.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\login_page.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\mail_compose.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\mail_inbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\mail_outbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\mail_spam.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\modals_lightbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\multiupload.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\newsletter_campaigns.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\newsletter_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\newsletter_templates.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\notifications.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\sidebar_accordion.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tables_datatables.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tables_regular.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tabs_accordions.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tasks_label.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tasks_starred.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tasks_summary.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tasks_today.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\tooltips_popovers.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\typography.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\user_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\js\user_profile.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\alerts_buttons.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\blank.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\calendar.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\charts.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\chat.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\dashboard.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\easy_tree.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\ecommerce_products_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\ecommerce_product_edit.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\ecommerce_sales_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\editable_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\error_404.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\form_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\form_extended_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\form_validation.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\form_wizard.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\form_wysiwg.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\gallery.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\grid.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\icons.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\image_zoom.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\invoice.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\login_page.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\mail_compose.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\mail_inbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\mail_outbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\mail_spam.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\modals_lightbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\multiupload.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\newsletter_campaigns.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\newsletter_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\newsletter_templates.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\notifications.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\sidebar_accordion.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tables_datatables.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tables_regular.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tabs_accordions.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tasks_label.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tasks_starred.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tasks_summary.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tasks_today.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\tooltips_popovers.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\typography.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\user_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\moment-js\user_profile.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\alerts_buttons.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\blank.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\calendar.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\charts.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\chat.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\dashboard.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\easy_tree.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\ecommerce_products_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\ecommerce_product_edit.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\ecommerce_sales_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\editable_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\error_404.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_extended_elements.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_validation.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_wizard.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_wysiwg.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\gallery.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\grid.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\icons.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\image_zoom.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\invoice.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\login_page.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_compose.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_inbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_outbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_spam.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\modals_lightbox.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\multiupload.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\newsletter_campaigns.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\newsletter_report.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\newsletter_templates.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\notifications.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\sidebar_accordion.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tables_datatables.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tables_regular.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tabs_accordions.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_label.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_starred.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_summary.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_today.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tooltips_popovers.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\typography.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\user_list.html" />
+    <Content Include="Assets\bootstrap\js\assets\lib\perfect-scrollbar\min\user_profile.html" />
+    <Content Include="Assets\bootstrap\js\blank.html" />
+    <Content Include="Assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Assets\bootstrap\js\calendar.html" />
+    <Content Include="Assets\bootstrap\js\charts.html" />
+    <Content Include="Assets\bootstrap\js\chat.html" />
+    <Content Include="Assets\bootstrap\js\dashboard.html" />
+    <Content Include="Assets\bootstrap\js\easy_tree.html" />
+    <Content Include="Assets\bootstrap\js\ecommerce_products_list.html" />
+    <Content Include="Assets\bootstrap\js\ecommerce_product_edit.html" />
+    <Content Include="Assets\bootstrap\js\ecommerce_sales_report.html" />
+    <Content Include="Assets\bootstrap\js\editable_elements.html" />
+    <Content Include="Assets\bootstrap\js\error_404.html" />
+    <Content Include="Assets\bootstrap\js\form_elements.html" />
+    <Content Include="Assets\bootstrap\js\form_extended_elements.html" />
+    <Content Include="Assets\bootstrap\js\form_validation.html" />
+    <Content Include="Assets\bootstrap\js\form_wizard.html" />
+    <Content Include="Assets\bootstrap\js\form_wysiwg.html" />
+    <Content Include="Assets\bootstrap\js\gallery.html" />
+    <Content Include="Assets\bootstrap\js\grid.html" />
+    <Content Include="Assets\bootstrap\js\icons.html" />
+    <Content Include="Assets\bootstrap\js\image_zoom.html" />
+    <Content Include="Assets\bootstrap\js\invoice.html" />
+    <Content Include="Assets\bootstrap\js\login_page.html" />
+    <Content Include="Assets\bootstrap\js\mail_compose.html" />
+    <Content Include="Assets\bootstrap\js\mail_inbox.html" />
+    <Content Include="Assets\bootstrap\js\mail_outbox.html" />
+    <Content Include="Assets\bootstrap\js\mail_spam.html" />
+    <Content Include="Assets\bootstrap\js\modals_lightbox.html" />
+    <Content Include="Assets\bootstrap\js\multiupload.html" />
+    <Content Include="Assets\bootstrap\js\newsletter_campaigns.html" />
+    <Content Include="Assets\bootstrap\js\newsletter_report.html" />
+    <Content Include="Assets\bootstrap\js\newsletter_templates.html" />
+    <Content Include="Assets\bootstrap\js\notifications.html" />
+    <Content Include="Assets\bootstrap\js\sidebar_accordion.html" />
+    <Content Include="Assets\bootstrap\js\tables_datatables.html" />
+    <Content Include="Assets\bootstrap\js\tables_regular.html" />
+    <Content Include="Assets\bootstrap\js\tabs_accordions.html" />
+    <Content Include="Assets\bootstrap\js\tasks_label.html" />
+    <Content Include="Assets\bootstrap\js\tasks_starred.html" />
+    <Content Include="Assets\bootstrap\js\tasks_summary.html" />
+    <Content Include="Assets\bootstrap\js\tasks_today.html" />
+    <Content Include="Assets\bootstrap\js\tooltips_popovers.html" />
+    <Content Include="Assets\bootstrap\js\typography.html" />
+    <Content Include="Assets\bootstrap\js\user_list.html" />
+    <Content Include="Assets\bootstrap\js\user_profile.html" />
+    <Content Include="Assets\css\login.css" />
+    <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\icons\flags\flags%402x.png" />
+    <Content Include="Assets\icons\flags\flags.css" />
+    <Content Include="Assets\icons\flags\flags.png" />
+    <Content Include="Assets\icons\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Assets\icons\ionicons\css\ionicons.min.css" />
+    <Content Include="Assets\img\avatars\avatar_1.jpg" />
+    <Content Include="Assets\img\avatars\avatar_10.jpg" />
+    <Content Include="Assets\img\avatars\avatar_11.jpg" />
+    <Content Include="Assets\img\avatars\avatar_12.jpg" />
+    <Content Include="Assets\img\avatars\avatar_13.jpg" />
+    <Content Include="Assets\img\avatars\avatar_14.jpg" />
+    <Content Include="Assets\img\avatars\avatar_15.jpg" />
+    <Content Include="Assets\img\avatars\avatar_16.jpg" />
+    <Content Include="Assets\img\avatars\avatar_17.jpg" />
+    <Content Include="Assets\img\avatars\avatar_18.jpg" />
+    <Content Include="Assets\img\avatars\avatar_19.jpg" />
+    <Content Include="Assets\img\avatars\avatar_2.jpg" />
+    <Content Include="Assets\img\avatars\avatar_20.jpg" />
+    <Content Include="Assets\img\avatars\avatar_3.jpg" />
+    <Content Include="Assets\img\avatars\avatar_4.jpg" />
+    <Content Include="Assets\img\avatars\avatar_5.jpg" />
+    <Content Include="Assets\img\avatars\avatar_6.jpg" />
+    <Content Include="Assets\img\avatars\avatar_7.jpg" />
+    <Content Include="Assets\img\avatars\avatar_8.jpg" />
+    <Content Include="Assets\img\avatars\avatar_9.jpg" />
+    <Content Include="Assets\img\blank.gif" />
+    <Content Include="Assets\img\datatables\sort_asc.png" />
+    <Content Include="Assets\img\datatables\sort_asc_disabled.png" />
+    <Content Include="Assets\img\datatables\sort_both.png" />
+    <Content Include="Assets\img\datatables\sort_desc.png" />
+    <Content Include="Assets\img\datatables\sort_desc_disabled.png" />
+    <Content Include="Assets\img\examples\big_image_800x600.gif" />
+    <Content Include="Assets\img\examples\image_220x220.gif" />
+    <Content Include="Assets\img\examples\image_60x60.gif" />
+    <Content Include="Assets\img\examples\image_zoomer_01_tn.jpg" />
+    <Content Include="Assets\img\examples\image_zoomer_02_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image001.jpg" />
+    <Content Include="Assets\img\gallery\Image001_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image002.jpg" />
+    <Content Include="Assets\img\gallery\Image002_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image003.jpg" />
+    <Content Include="Assets\img\gallery\Image003_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image004.jpg" />
+    <Content Include="Assets\img\gallery\Image004_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image005.jpg" />
+    <Content Include="Assets\img\gallery\Image005_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image006.jpg" />
+    <Content Include="Assets\img\gallery\Image006_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image007.jpg" />
+    <Content Include="Assets\img\gallery\Image007_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image008.jpg" />
+    <Content Include="Assets\img\gallery\Image008_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image009.jpg" />
+    <Content Include="Assets\img\gallery\Image009_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image010.jpg" />
+    <Content Include="Assets\img\gallery\Image010_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image011.jpg" />
+    <Content Include="Assets\img\gallery\Image011_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image012.jpg" />
+    <Content Include="Assets\img\gallery\Image012_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image013.jpg" />
+    <Content Include="Assets\img\gallery\Image013_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image014.jpg" />
+    <Content Include="Assets\img\gallery\Image014_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image015.jpg" />
+    <Content Include="Assets\img\gallery\Image015_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image016.jpg" />
+    <Content Include="Assets\img\gallery\Image016_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image017.jpg" />
+    <Content Include="Assets\img\gallery\Image017_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image018.jpg" />
+    <Content Include="Assets\img\gallery\Image018_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image019.jpg" />
+    <Content Include="Assets\img\gallery\Image019_tn.jpg" />
+    <Content Include="Assets\img\gallery\Image020.jpg" />
+    <Content Include="Assets\img\gallery\Image020_tn.jpg" />
+    <Content Include="Assets\img\logo.png" />
+    <Content Include="Assets\img\multiselect_switch.png" />
+    <Content Include="Assets\img\switch_handle.png" />
+    <Content Include="Assets\js\apps\tisa_calendar.js" />
+    <Content Include="Assets\js\apps\tisa_charts.js" />
+    <Content Include="Assets\js\apps\tisa_dashboard.js" />
+    <Content Include="Assets\js\apps\tisa_datatables.js" />
+    <Content Include="Assets\js\apps\tisa_easy_tree.js" />
+    <Content Include="Assets\js\apps\tisa_ecommerce.js" />
+    <Content Include="Assets\js\apps\tisa_editable_elements.js" />
+    <Content Include="Assets\js\apps\tisa_extended_elements.js" />
+    <Content Include="Assets\js\apps\tisa_freewall.js" />
+    <Content Include="Assets\js\apps\tisa_icons.js" />
+    <Content Include="Assets\js\apps\tisa_mail.js" />
+    <Content Include="Assets\js\apps\tisa_modals.js" />
+    <Content Include="Assets\js\apps\tisa_multiupload.js" />
+    <Content Include="Assets\js\apps\tisa_newsletter.js" />
+    <Content Include="Assets\js\apps\tisa_notifications.js" />
+    <Content Include="Assets\js\apps\tisa_todo.js" />
+    <Content Include="Assets\js\apps\tisa_tooltips.js" />
+    <Content Include="Assets\js\apps\tisa_user_list.js" />
+    <Content Include="Assets\js\apps\tisa_user_profile.js" />
+    <Content Include="Assets\js\apps\tisa_validation.js" />
+    <Content Include="Assets\js\apps\tisa_wizard.js" />
+    <Content Include="Assets\js\apps\tisa_wysiwg.js" />
+    <Content Include="Assets\js\apps\tisa_zoom.js" />
+    <Content Include="Assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Assets\js\jquery.easing.1.3.min.js" />
+    <Content Include="Assets\js\jquery.min.js" />
+    <Content Include="Assets\js\jquery.mockjax.js" />
+    <Content Include="Assets\js\jquery.quicksearch.js" />
+    <Content Include="Assets\js\jquery_cookie.min.js" />
+    <Content Include="Assets\js\tinynav.js" />
+    <Content Include="Assets\js\tisa_common.js" />
+    <Content Include="Assets\js\tisa_style_switcher.js" />
+    <Content Include="Assets\lib\ace\src-min-noconflict\ace.js" />
+    <Content Include="Assets\lib\autosize\jquery.autosize.min.js" />
+    <Content Include="Assets\lib\bootbox\bootbox.js" />
+    <Content Include="Assets\lib\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Assets\lib\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Assets\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Assets\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Assets\lib\bootstrap-switch\build\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="Assets\lib\bootstrap-switch\build\js\bootstrap-switch.min.js" />
+    <Content Include="Assets\lib\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Assets\lib\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Assets\lib\ckeditor\adapters\jquery.js" />
+    <Content Include="Assets\lib\ckeditor\ckeditor.js" />
+    <Content Include="Assets\lib\ckeditor\config.js" />
+    <Content Include="Assets\lib\ckeditor\contents.css" />
+    <Content Include="Assets\lib\ckeditor\styles.js" />
+    <Content Include="Assets\lib\CLNDR\src\clndr.js" />
+    <Content Include="Assets\lib\d3\d3.min.js" />
+    <Content Include="Assets\lib\DataTables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Assets\lib\DataTables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Assets\lib\DataTables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Assets\lib\DataTables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Assets\lib\DataTables\extensions\TableTools\images\background.png" />
+    <Content Include="Assets\lib\DataTables\extensions\TableTools\images\collection.png" />
+    <Content Include="Assets\lib\DataTables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Assets\lib\DataTables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Assets\lib\DataTables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Assets\lib\DataTables\media\css\jquery.dataTables.min.css" />
+    <Content Include="Assets\lib\DataTables\media\images\sort_asc.png" />
+    <Content Include="Assets\lib\DataTables\media\images\sort_asc_disabled.png" />
+    <Content Include="Assets\lib\DataTables\media\images\sort_both.png" />
+    <Content Include="Assets\lib\DataTables\media\images\sort_desc.png" />
+    <Content Include="Assets\lib\DataTables\media\images\sort_desc_disabled.png" />
+    <Content Include="Assets\lib\DataTables\media\js\dataTables.bootstrap.js" />
+    <Content Include="Assets\lib\DataTables\media\js\jquery.dataTables.min.js" />
+    <Content Include="Assets\lib\easy-pie-chart\dist\jquery.easypiechart.js" />
+    <Content Include="Assets\lib\easy-pie-chart\dist\jquery.easypiechart.min.js" />
+    <Content Include="Assets\lib\EasyTree\jquery.easytree.min.js" />
+    <Content Include="Assets\lib\EasyTree\skin-win8\icons.gif" />
+    <Content Include="Assets\lib\EasyTree\skin-win8\loading.gif" />
+    <Content Include="Assets\lib\EasyTree\skin-win8\ui.easytree.css" />
+    <Content Include="Assets\lib\elevatezoom\jquery.elevateZoom-3.0.8.min.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.min.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.pie.min.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.resize.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.resize.min.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.time.min.js" />
+    <Content Include="Assets\lib\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Assets\lib\footable\css\fonts\footable.svg" />
+    <Content Include="Assets\lib\footable\css\footable.core.min.css" />
+    <Content Include="Assets\lib\footable\js\footable.filter.js" />
+    <Content Include="Assets\lib\footable\js\footable.js" />
+    <Content Include="Assets\lib\footable\js\footable.paginate.js" />
+    <Content Include="Assets\lib\freewall\freewall.js" />
+    <Content Include="Assets\lib\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="Assets\lib\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Assets\lib\fullcalendar\fullcalendar\lang\all.js" />
+    <Content Include="Assets\lib\iCheck\jquery.icheck.min.js" />
+    <Content Include="Assets\lib\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Assets\lib\iCheck\skins\minimal\green.css" />
+    <Content Include="Assets\lib\iCheck\skins\minimal\green.png" />
+    <Content Include="Assets\lib\ion.rangeSlider\css\ion.rangeSlider.css" />
+    <Content Include="Assets\lib\ion.rangeSlider\js\ion-rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Assets\lib\iOS-Overlay\js\iosOverlay.js" />
+    <Content Include="Assets\lib\jasny\rowlink.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\extras\canvas-to-blob.min.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\extras\load-image.min.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\extras\tmpl.min.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload-audio.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload-image.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload-process.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload-validate.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload-video.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.fileupload.js" />
+    <Content Include="Assets\lib\jQuery-File-Upload\js\jquery.iframe-transport.js" />
+    <Content Include="Assets\lib\jquery-listnav\dist\js\jquery-listnav-2.4.0.min.js" />
+    <Content Include="Assets\lib\jquery-steps\build\jquery.steps.js" />
+    <Content Include="Assets\lib\jQuery-UI\jquery-ui.min.js" />
+    <Content Include="Assets\lib\jQuery-UI\jquery.ui.widget.min.js" />
+    <Content Include="Assets\lib\jquery.inputmask\dist\jquery.inputmask.bundle.min.js" />
+    <Content Include="Assets\lib\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Assets\lib\magnific-popup\magnific-popup.css" />
+    <Content Include="Assets\lib\mixitup\src\jquery.mixitup.js" />
+    <Content Include="Assets\lib\moment-js\moment.min.js" />
+    <Content Include="Assets\lib\multi-select\css\multi-select.css" />
+    <Content Include="Assets\lib\multi-select\img\switch.png" />
+    <Content Include="Assets\lib\multi-select\js\jquery.multi-select.js" />
+    <Content Include="Assets\lib\noty\js\noty\packaged\jquery.noty.packaged.js" />
+    <Content Include="Assets\lib\novus-nvd3\nv.d3.min.css" />
+    <Content Include="Assets\lib\novus-nvd3\nv.d3.min.js" />
+    <Content Include="Assets\lib\owl-carousel\grabbing.png" />
+    <Content Include="Assets\lib\owl-carousel\owl.carousel.css" />
+    <Content Include="Assets\lib\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Assets\lib\Parsley.js\dist\parsley.min.js" />
+    <Content Include="Assets\lib\peity\jquery.peity.min.js" />
+    <Content Include="Assets\lib\perfect-scrollbar\min\perfect.scrollbar.min.js" />
+    <Content Include="Assets\lib\powertip\jquery.powertip.min.js" />
+    <Content Include="Assets\lib\prism\prism.js" />
+    <Content Include="Assets\lib\prism\prism_default.css" />
+    <Content Include="Assets\lib\select2\select2-spinner.gif" />
+    <Content Include="Assets\lib\select2\select2.css" />
+    <Content Include="Assets\lib\select2\select2.min.js" />
+    <Content Include="Assets\lib\select2\select2.png" />
+    <Content Include="Assets\lib\select2\select2x2.png" />
+    <Content Include="Assets\lib\tablesorter\js\jquery.tablesorter.min.js" />
+    <Content Include="Assets\lib\underscore-js\underscore-min.js" />
+    <Content Include="Assets\lib\x-editable\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="Assets\lib\x-editable\bootstrap3-editable\img\clear.png" />
+    <Content Include="Assets\lib\x-editable\bootstrap3-editable\img\loading.gif" />
+    <Content Include="Assets\lib\x-editable\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Assets\lib\x-editable\inputs-ext\address\address.css" />
+    <Content Include="Assets\lib\x-editable\inputs-ext\address\address.js" />
+    <Content Include="Assets\lib\x-editable\inputs-ext\typeaheadjs\lib\typeahead.js" />
+    <Content Include="Assets\lib\x-editable\inputs-ext\typeaheadjs\typeaheadjs.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.eot-" />
+    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.eot-" />
+    <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.wof" />
+    <None Include="Assets\icons\ionicons\fonts\ionicons.eot" />
+    <Content Include="Assets\icons\ionicons\fonts\ionicons.svg" />
+    <None Include="Assets\icons\ionicons\fonts\ionicons.ttf" />
+    <None Include="Assets\icons\ionicons\fonts\ionicons.woff" />
+    <Content Include="Assets\lib\footable\css\fonts\footable.eot" />
+    <Content Include="Assets\lib\footable\css\fonts\footable.eot-" />
+    <Content Include="Assets\lib\footable\css\fonts\footable.ttf" />
+    <Content Include="Assets\lib\footable\css\fonts\footable.woff" />
+    <Content Include="Areas\Administration\Views\web.config" />
+    <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administration\Views\Home\Index.cshtml" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\template.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="UploadAssets\Avatar\dragon.jpg" />
+    <Content Include="Views\Template\alerts_buttons.html" />
+    <Content Include="Views\Template\assets\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Views\Template\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Views\Template\assets\bootstrap\js\%29[this.options.html-.htm" />
+    <Content Include="Views\Template\assets\bootstrap\js\alerts_buttons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\alerts_buttons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\blank.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\calendar.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\charts.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\chat.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\dashboard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\easy_tree.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\ecommerce_products_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\ecommerce_product_edit.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\ecommerce_sales_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\editable_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\error_404.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\form_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\form_extended_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\form_validation.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\form_wizard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\form_wysiwg.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\gallery.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\grid.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\icons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\image_zoom.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\invoice.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\login_page.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\mail_compose.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\mail_inbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\mail_outbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\mail_spam.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\modals_lightbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\multiupload.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\newsletter_campaigns.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\newsletter_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\newsletter_templates.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\notifications.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\sidebar_accordion.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tables_datatables.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tables_regular.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tabs_accordions.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tasks_label.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tasks_starred.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tasks_summary.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tasks_today.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\tooltips_popovers.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\typography.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\user_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\bootstrap\js\user_profile.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\alerts_buttons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\blank.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\calendar.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\charts.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\chat.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\dashboard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\easy_tree.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\ecommerce_products_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\ecommerce_product_edit.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\ecommerce_sales_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\editable_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\error_404.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\form_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\form_extended_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\form_validation.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\form_wizard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\form_wysiwg.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\gallery.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\grid.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\icons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\image_zoom.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\invoice.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\login_page.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\mail_compose.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\mail_inbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\mail_outbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\mail_spam.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\modals_lightbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\multiupload.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\newsletter_campaigns.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\newsletter_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\newsletter_templates.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\notifications.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\sidebar_accordion.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tables_datatables.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tables_regular.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tabs_accordions.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tasks_label.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tasks_starred.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tasks_summary.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tasks_today.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\tooltips_popovers.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\typography.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\user_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\js\user_profile.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\alerts_buttons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\blank.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\calendar.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\charts.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\chat.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\dashboard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\easy_tree.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\ecommerce_products_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\ecommerce_product_edit.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\ecommerce_sales_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\editable_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\error_404.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\form_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\form_extended_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\form_validation.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\form_wizard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\form_wysiwg.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\gallery.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\grid.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\icons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\image_zoom.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\invoice.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\login_page.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\mail_compose.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\mail_inbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\mail_outbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\mail_spam.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\modals_lightbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\multiupload.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\newsletter_campaigns.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\newsletter_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\newsletter_templates.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\notifications.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\sidebar_accordion.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tables_datatables.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tables_regular.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tabs_accordions.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tasks_label.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tasks_starred.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tasks_summary.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tasks_today.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\tooltips_popovers.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\typography.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\user_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\moment-js\user_profile.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\alerts_buttons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\blank.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\calendar.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\charts.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\chat.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\dashboard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\easy_tree.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\ecommerce_products_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\ecommerce_product_edit.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\ecommerce_sales_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\editable_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\error_404.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_extended_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_validation.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_wizard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\form_wysiwg.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\gallery.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\grid.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\icons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\image_zoom.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\invoice.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\login_page.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_compose.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_inbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_outbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\mail_spam.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\modals_lightbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\multiupload.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\newsletter_campaigns.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\newsletter_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\newsletter_templates.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\notifications.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\sidebar_accordion.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tables_datatables.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tables_regular.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tabs_accordions.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_label.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_starred.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_summary.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tasks_today.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\tooltips_popovers.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\typography.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\user_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\assets\lib\perfect-scrollbar\min\user_profile.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\blank.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Views\Template\assets\bootstrap\js\calendar.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\charts.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\chat.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\dashboard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\easy_tree.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\ecommerce_products_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\ecommerce_product_edit.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\ecommerce_sales_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\editable_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\error_404.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\form_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\form_extended_elements.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\form_validation.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\form_wizard.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\form_wysiwg.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\gallery.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\grid.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\icons.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\image_zoom.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\invoice.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\login_page.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\mail_compose.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\mail_inbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\mail_outbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\mail_spam.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\modals_lightbox.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\multiupload.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\newsletter_campaigns.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\newsletter_report.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\newsletter_templates.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\notifications.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\sidebar_accordion.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tables_datatables.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tables_regular.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tabs_accordions.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tasks_label.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tasks_starred.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tasks_summary.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tasks_today.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\tooltips_popovers.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\typography.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\user_list.html" />
+    <Content Include="Views\Template\assets\bootstrap\js\user_profile.html" />
+    <Content Include="Views\Template\assets\css\login.css" />
+    <Content Include="Views\Template\assets\css\style.css" />
+    <Content Include="Views\Template\assets\icons\flags\flags%402x.png" />
+    <Content Include="Views\Template\assets\icons\flags\flags.css" />
+    <Content Include="Views\Template\assets\icons\flags\flags.png" />
+    <Content Include="Views\Template\assets\icons\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Views\Template\assets\icons\ionicons\css\ionicons.min.css" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_1.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_10.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_11.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_12.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_13.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_14.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_15.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_16.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_17.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_18.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_19.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_2.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_20.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_3.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_4.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_5.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_6.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_7.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_8.jpg" />
+    <Content Include="Views\Template\assets\img\avatars\avatar_9.jpg" />
+    <Content Include="Views\Template\assets\img\blank.gif" />
+    <Content Include="Views\Template\assets\img\datatables\sort_asc.png" />
+    <Content Include="Views\Template\assets\img\datatables\sort_asc_disabled.png" />
+    <Content Include="Views\Template\assets\img\datatables\sort_both.png" />
+    <Content Include="Views\Template\assets\img\datatables\sort_desc.png" />
+    <Content Include="Views\Template\assets\img\datatables\sort_desc_disabled.png" />
+    <Content Include="Views\Template\assets\img\examples\big_image_800x600.gif" />
+    <Content Include="Views\Template\assets\img\examples\image_220x220.gif" />
+    <Content Include="Views\Template\assets\img\examples\image_60x60.gif" />
+    <Content Include="Views\Template\assets\img\examples\image_zoomer_01_tn.jpg" />
+    <Content Include="Views\Template\assets\img\examples\image_zoomer_02_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image001.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image001_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image002.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image002_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image003.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image003_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image004.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image004_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image005.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image005_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image006.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image006_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image007.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image007_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image008.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image008_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image009.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image009_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image010.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image010_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image011.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image011_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image012.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image012_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image013.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image013_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image014.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image014_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image015.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image015_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image016.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image016_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image017.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image017_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image018.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image018_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image019.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image019_tn.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image020.jpg" />
+    <Content Include="Views\Template\assets\img\gallery\Image020_tn.jpg" />
+    <Content Include="Views\Template\assets\img\logo.png" />
+    <Content Include="Views\Template\assets\img\multiselect_switch.png" />
+    <Content Include="Views\Template\assets\img\switch_handle.png" />
+    <Content Include="Views\Template\assets\js\apps\tisa_calendar.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_charts.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_dashboard.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_datatables.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_easy_tree.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_ecommerce.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_editable_elements.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_extended_elements.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_freewall.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_icons.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_mail.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_modals.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_multiupload.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_newsletter.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_notifications.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_todo.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_tooltips.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_user_list.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_user_profile.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_validation.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_wizard.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_wysiwg.js" />
+    <Content Include="Views\Template\assets\js\apps\tisa_zoom.js" />
+    <Content Include="Views\Template\assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Views\Template\assets\js\jquery.easing.1.3.min.js" />
+    <Content Include="Views\Template\assets\js\jquery.min.js" />
+    <Content Include="Views\Template\assets\js\jquery.mockjax.js" />
+    <Content Include="Views\Template\assets\js\jquery.quicksearch.js" />
+    <Content Include="Views\Template\assets\js\jquery_cookie.min.js" />
+    <Content Include="Views\Template\assets\js\tinynav.js" />
+    <Content Include="Views\Template\assets\js\tisa_common.js" />
+    <Content Include="Views\Template\assets\js\tisa_style_switcher.js" />
+    <Content Include="Views\Template\assets\lib\ace\src-min-noconflict\ace.js" />
+    <Content Include="Views\Template\assets\lib\autosize\jquery.autosize.min.js" />
+    <Content Include="Views\Template\assets\lib\bootbox\bootbox.js" />
+    <Content Include="Views\Template\assets\lib\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Views\Template\assets\lib\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Views\Template\assets\lib\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Views\Template\assets\lib\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Views\Template\assets\lib\bootstrap-switch\build\css\bootstrap3\bootstrap-switch.css" />
+    <Content Include="Views\Template\assets\lib\bootstrap-switch\build\js\bootstrap-switch.min.js" />
+    <Content Include="Views\Template\assets\lib\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Views\Template\assets\lib\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Views\Template\assets\lib\ckeditor\adapters\jquery.js" />
+    <Content Include="Views\Template\assets\lib\ckeditor\ckeditor.js" />
+    <Content Include="Views\Template\assets\lib\ckeditor\config.js" />
+    <Content Include="Views\Template\assets\lib\ckeditor\contents.css" />
+    <Content Include="Views\Template\assets\lib\ckeditor\styles.js" />
+    <Content Include="Views\Template\assets\lib\CLNDR\src\clndr.js" />
+    <Content Include="Views\Template\assets\lib\d3\d3.min.js" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\Scroller\css\dataTables.scroller.min.css" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\Scroller\images\loading-background.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\Scroller\js\dataTables.scroller.min.js" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\TableTools\css\dataTables.tableTools.min.css" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\TableTools\images\background.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\TableTools\images\collection.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\TableTools\images\collection_hover.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\TableTools\js\dataTables.tableTools.min.js" />
+    <Content Include="Views\Template\assets\lib\DataTables\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\css\jquery.dataTables.min.css" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\images\sort_asc.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\images\sort_asc_disabled.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\images\sort_both.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\images\sort_desc.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\images\sort_desc_disabled.png" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\js\dataTables.bootstrap.js" />
+    <Content Include="Views\Template\assets\lib\DataTables\media\js\jquery.dataTables.min.js" />
+    <Content Include="Views\Template\assets\lib\easy-pie-chart\dist\jquery.easypiechart.min.js" />
+    <Content Include="Views\Template\assets\lib\EasyTree\jquery.easytree.min.js" />
+    <Content Include="Views\Template\assets\lib\EasyTree\skin-win8\icons.gif" />
+    <Content Include="Views\Template\assets\lib\EasyTree\skin-win8\loading.gif" />
+    <Content Include="Views\Template\assets\lib\EasyTree\skin-win8\ui.easytree.css" />
+    <Content Include="Views\Template\assets\lib\elevatezoom\jquery.elevateZoom-3.0.8.min.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.min.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.pie.min.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.resize.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.resize.min.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.time.min.js" />
+    <Content Include="Views\Template\assets\lib\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Views\Template\assets\lib\footable\css\fonts\footable.svg" />
+    <Content Include="Views\Template\assets\lib\footable\css\footable.core.min.css" />
+    <Content Include="Views\Template\assets\lib\footable\js\footable.filter.js" />
+    <Content Include="Views\Template\assets\lib\footable\js\footable.js" />
+    <Content Include="Views\Template\assets\lib\footable\js\footable.paginate.js" />
+    <Content Include="Views\Template\assets\lib\freewall\freewall.js" />
+    <Content Include="Views\Template\assets\lib\fullcalendar\fullcalendar\fullcalendar.css" />
+    <Content Include="Views\Template\assets\lib\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Views\Template\assets\lib\fullcalendar\fullcalendar\lang\all.js" />
+    <Content Include="Views\Template\assets\lib\iCheck\jquery.icheck.min.js" />
+    <Content Include="Views\Template\assets\lib\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="Views\Template\assets\lib\iCheck\skins\minimal\green.css" />
+    <Content Include="Views\Template\assets\lib\iCheck\skins\minimal\green.png" />
+    <Content Include="Views\Template\assets\lib\ion.rangeSlider\css\ion.rangeSlider.css" />
+    <Content Include="Views\Template\assets\lib\ion.rangeSlider\js\ion-rangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Views\Template\assets\lib\iOS-Overlay\js\iosOverlay.js" />
+    <Content Include="Views\Template\assets\lib\jasny\rowlink.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\extras\canvas-to-blob.min.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\extras\load-image.min.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\extras\tmpl.min.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload-audio.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload-image.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload-process.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload-ui.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload-validate.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload-video.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.fileupload.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-File-Upload\js\jquery.iframe-transport.js" />
+    <Content Include="Views\Template\assets\lib\jquery-listnav\dist\js\jquery-listnav-2.4.0.min.js" />
+    <Content Include="Views\Template\assets\lib\jquery-steps\build\jquery.steps.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-UI\jquery-ui.min.js" />
+    <Content Include="Views\Template\assets\lib\jQuery-UI\jquery.ui.widget.min.js" />
+    <Content Include="Views\Template\assets\lib\jquery.inputmask\dist\jquery.inputmask.bundle.min.js" />
+    <Content Include="Views\Template\assets\lib\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Views\Template\assets\lib\magnific-popup\magnific-popup.css" />
+    <Content Include="Views\Template\assets\lib\mixitup\src\jquery.mixitup.js" />
+    <Content Include="Views\Template\assets\lib\moment-js\moment.min.js" />
+    <Content Include="Views\Template\assets\lib\multi-select\css\multi-select.css" />
+    <Content Include="Views\Template\assets\lib\multi-select\img\switch.png" />
+    <Content Include="Views\Template\assets\lib\multi-select\js\jquery.multi-select.js" />
+    <Content Include="Views\Template\assets\lib\noty\js\noty\packaged\jquery.noty.packaged.js" />
+    <Content Include="Views\Template\assets\lib\novus-nvd3\nv.d3.min.css" />
+    <Content Include="Views\Template\assets\lib\novus-nvd3\nv.d3.min.js" />
+    <Content Include="Views\Template\assets\lib\owl-carousel\grabbing.png" />
+    <Content Include="Views\Template\assets\lib\owl-carousel\owl.carousel.css" />
+    <Content Include="Views\Template\assets\lib\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Views\Template\assets\lib\Parsley.js\dist\parsley.min.js" />
+    <Content Include="Views\Template\assets\lib\peity\jquery.peity.min.js" />
+    <Content Include="Views\Template\assets\lib\perfect-scrollbar\min\perfect-scrollbar-0.4.8.with-mousewheel.min.js" />
+    <Content Include="Views\Template\assets\lib\powertip\jquery.powertip.min.js" />
+    <Content Include="Views\Template\assets\lib\prism\prism.js" />
+    <Content Include="Views\Template\assets\lib\prism\prism_default.css" />
+    <Content Include="Views\Template\assets\lib\select2\select2-spinner.gif" />
+    <Content Include="Views\Template\assets\lib\select2\select2.css" />
+    <Content Include="Views\Template\assets\lib\select2\select2.min.js" />
+    <Content Include="Views\Template\assets\lib\select2\select2.png" />
+    <Content Include="Views\Template\assets\lib\select2\select2x2.png" />
+    <Content Include="Views\Template\assets\lib\tablesorter\js\jquery.tablesorter.min.js" />
+    <Content Include="Views\Template\assets\lib\underscore-js\underscore-min.js" />
+    <Content Include="Views\Template\assets\lib\x-editable\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="Views\Template\assets\lib\x-editable\bootstrap3-editable\img\clear.png" />
+    <Content Include="Views\Template\assets\lib\x-editable\bootstrap3-editable\img\loading.gif" />
+    <Content Include="Views\Template\assets\lib\x-editable\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Views\Template\assets\lib\x-editable\inputs-ext\address\address.css" />
+    <Content Include="Views\Template\assets\lib\x-editable\inputs-ext\address\address.js" />
+    <Content Include="Views\Template\assets\lib\x-editable\inputs-ext\typeaheadjs\lib\typeahead.js" />
+    <Content Include="Views\Template\assets\lib\x-editable\inputs-ext\typeaheadjs\typeaheadjs.js" />
+    <Content Include="Views\Template\blank.html" />
+    <Content Include="Views\Template\calendar.html" />
+    <Content Include="Views\Template\charts.html" />
+    <Content Include="Views\Template\chat.html" />
+    <Content Include="Views\Template\dashboard.html" />
+    <Content Include="Views\Template\easy_tree.html" />
+    <Content Include="Views\Template\ecommerce_products_list.html" />
+    <Content Include="Views\Template\ecommerce_product_edit.html" />
+    <Content Include="Views\Template\ecommerce_sales_report.html" />
+    <Content Include="Views\Template\editable_elements.html" />
+    <Content Include="Views\Template\error_404.html" />
+    <Content Include="Views\Template\form_elements.html" />
+    <Content Include="Views\Template\form_extended_elements.html" />
+    <Content Include="Views\Template\form_validation.html" />
+    <Content Include="Views\Template\form_wizard.html" />
+    <Content Include="Views\Template\form_wysiwg.html" />
+    <Content Include="Views\Template\gallery.html" />
+    <Content Include="Views\Template\grid.html" />
+    <Content Include="Views\Template\icons.html" />
+    <Content Include="Views\Template\image_zoom.html" />
+    <Content Include="Views\Template\index.htm" />
+    <Content Include="Views\Template\invoice.html" />
+    <Content Include="Views\Template\login_page.html" />
+    <Content Include="Views\Template\mail_compose.html" />
+    <Content Include="Views\Template\mail_inbox.html" />
+    <Content Include="Views\Template\mail_outbox.html" />
+    <Content Include="Views\Template\mail_spam.html" />
+    <Content Include="Views\Template\modals_lightbox.html" />
+    <Content Include="Views\Template\multiupload.html" />
+    <Content Include="Views\Template\newsletter_campaigns.html" />
+    <Content Include="Views\Template\newsletter_report.html" />
+    <Content Include="Views\Template\newsletter_templates.html" />
+    <Content Include="Views\Template\notifications.html" />
+    <Content Include="Views\Template\sidebar_accordion.html" />
+    <Content Include="Views\Template\tables_datatables.html" />
+    <Content Include="Views\Template\tables_regular.html" />
+    <Content Include="Views\Template\tabs_accordions.html" />
+    <Content Include="Views\Template\tasks_label.html" />
+    <Content Include="Views\Template\tasks_starred.html" />
+    <Content Include="Views\Template\tasks_summary.html" />
+    <Content Include="Views\Template\tasks_today.html" />
+    <Content Include="Views\Template\tooltips_popovers.html" />
+    <Content Include="Views\Template\typography.html" />
+    <Content Include="Views\Template\user_list.html" />
+    <Content Include="Views\Template\user_profile.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Template\assets\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Template\assets\bootstrap\fonts\glyphicons-halflings-regular.eot-" />
+    <Content Include="Views\Template\assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Views\Template\assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Template\assets\icons\font-awesome\fonts\fontawesome-webfont.eot-" />
+    <Content Include="Views\Template\assets\icons\font-awesome\fonts\fontawesome-webfont.eot-v=4.0.3" />
+    <Content Include="Views\Template\assets\icons\font-awesome\fonts\fontawesome-webfont.svg-v=4.0.3" />
+    <Content Include="Views\Template\assets\icons\font-awesome\fonts\fontawesome-webfont.ttf-v=4.0.3" />
+    <Content Include="Views\Template\assets\icons\font-awesome\fonts\fontawesome-webfont.woff-v=4.0.3" />
+    <Content Include="Views\Template\assets\icons\ionicons\fonts\ionicons.eot-v=1.4.1" />
+    <Content Include="Views\Template\assets\icons\ionicons\fonts\ionicons.svg-v=1.4.1" />
+    <Content Include="Views\Template\assets\icons\ionicons\fonts\ionicons.ttf-v=1.4.1" />
+    <Content Include="Views\Template\assets\icons\ionicons\fonts\ionicons.woff-v=1.4.1" />
+    <Content Include="Views\Template\assets\lib\footable\css\fonts\footable.eot" />
+    <Content Include="Views\Template\assets\lib\footable\css\fonts\footable.eot-" />
+    <Content Include="Views\Template\assets\lib\footable\css\fonts\footable.ttf" />
+    <Content Include="Views\Template\assets\lib\footable\css\fonts\footable.woff" />
+    <Content Include="Views\Account\RegisterUser.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\UserManager\" />
+    <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Evals.IV.Applocation\Evals.IV.Applocation.csproj">
+      <Project>{cd57061a-d487-4630-8baf-c086a42d215c}</Project>
+      <Name>Evals.IV.Applocation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evals.IV.Domain.Repository\Evals.IV.Domain.Repository.csproj">
+      <Project>{9ffc35ef-0b1d-4e2f-9316-9399454e991e}</Project>
+      <Name>Evals.IV.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evals.IV.Domain\Evals.IV.Domain.csproj">
+      <Project>{93face5a-19b8-4e22-9c1e-434a818f1f18}</Project>
+      <Name>Evals.IV.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evals.IV.Infrastructure.Identity\Evals.IV.Infrastructure.Identity.csproj">
+      <Project>{e942f708-682d-44e1-b274-0348106cd220}</Project>
+      <Name>Evals.IV.Infrastructure.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Evals.IV.Infrastructure\Evals.IV.Infrastructure.csproj">
+      <Project>{7ad99fba-6979-42a9-84ad-a7ec08a8cb3b}</Project>
+      <Name>Evals.IV.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14619</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14619/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
