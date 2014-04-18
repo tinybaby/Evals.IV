@@ -666,6 +666,7 @@
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Assets\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Areas\Administration\Views\Video\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\UserManager\Index.cshtml" />
     <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.eot-" />
     <None Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.eot" />
     <Content Include="Assets\icons\font-awesome\fonts\fontawesome-webfont.svg" />
@@ -1240,7 +1241,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\UserManager\" />
     <Folder Include="Views\Test\" />
   </ItemGroup>
   <ItemGroup>
